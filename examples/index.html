@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<script src="https://assets.yammer.com/assets/platform_js_sdk.js" data-app-id="C27yEmE0bLyKudv2XpszfA"></script>
+<script src="../dist/yammer_api_client.min.js"></script>
+
+<h1>Groups</h1>
+<div id="groups">
+</div>
+
+<h1>Messages</h1>
+<div id="messages">
+</div>
+
+<script>
+
+var currentUser;
+
+function renderInboxMessages(messages) {
+  var el = document.getElementById('messages');
+  messages.each(function (message) {
+    el.innerHTML += '<div>message' + message.id + ': ' + message.get('content_excerpt') + '</div>';
+  });
+}
+
+function renderGroups(groups) {
+  var el = document.getElementById('groups');
+  groups.each(function (group) {
+    el.innerHTML += '<div>group' + group.id + '</div>';
+  });
+}
+
+function userIsLoggedIn() {
+  // Get the collections we need.
+  var inbox = currentUser.inboxMessages();
+  var groups = currentUser.groups(); 
+
+  // Fetch both collections from the server and render when done.
+  inbox.fetch().done(function () {
+    renderInboxMessages(inbox);
+  });
+
+  groups.fetch().done(function () {
+    renderGroups(groups);
+  });
+}
+
+function userNotLoggedIn() {
+  alert('User not logged in');
+}
+
+
+currentUser = Yammer.currentUser();
+currentUser.fetch()
+  .done(userIsLoggedIn)
+  .fail(userNotLoggedIn);
+
+</script>
+
+</body>
+</html>
