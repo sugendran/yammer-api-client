@@ -15,7 +15,8 @@
   "homepage": "https://github.com/dannyamey/yammer-api-client",
   "dependencies": {
     "underscore": "^1.6.0",
-    "backbone": "^1.1.2"
+    "backbone": "^1.1.2",
+    "backbone-with-identity-map": "git://github.com/dannyamey/backbone-with-identity-map.git#master"
   },
   "devDependencies": {
     "browserify": "^4.1.2",
