@@ -1,0 +1,24 @@
+{
+  "name": "yammer-api-client",
+  "version": "0.0.1",
+  "description": "Backbone based client for the Yammer API",
+  "main": "lib/yammer_api_client.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dannyamey/yammer-api-client.git"
+  },
+  "author": "Danny Amey <danny@dannyamey.com> (http://www.dannyamey.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dannyamey/yammer-api-client/issues"
+  },
+  "homepage": "https://github.com/dannyamey/yammer-api-client",
+  "dependencies": {
+    "underscore": "^1.6.0",
+    "backbone": "^1.1.2"
+  },
+  "devDependencies": {
+    "browserify": "^4.1.2",
+    "uglify-js": "^2.4.13"
+  }
+}
